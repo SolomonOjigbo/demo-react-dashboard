@@ -171,7 +171,7 @@ export const previousExpenses = [
 	},
 	{
 		id: 2,
-		expense: "Entertainment",
+		expense: "Transportation",
 		time: "5:12 pm",
 		location: "Nonton Bioskop",
 		price: 35.2,
@@ -179,7 +179,7 @@ export const previousExpenses = [
 		iconBackgroundColor: "#4BA83D",
 	},
 ];
-const spendCategories = [
+export const spendCategories = [
 	{
 		id: 1,
 		category: "Food and Drinks",

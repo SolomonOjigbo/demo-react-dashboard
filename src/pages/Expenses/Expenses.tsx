@@ -6,11 +6,17 @@ import personThree from "../../assets/png/person3.png";
 import addIcon from "../../assets/png/addIcon.png";
 import { ResponsiveContainer, BarChart, Bar, Cell } from "recharts";
 import optionIcon from "../../assets/png/menuIcon.png";
-import cartIcon from "../../assets/svg/cartIcon.svg";
-import transportIcon from "../../assets/svg/transportIcon.svg";
-import houseIcon from "../../assets/svg/houseIcon.svg";
-
-import { data, todayExpenses, previousExpenses } from "../../dummyData";
+// import cartIcon from "../../assets/svg/cartIcon.svg";
+// import transportIcon from "../../assets/svg/transportIcon.svg";
+// import houseIcon from "../../assets/svg/houseIcon.svg";
+import boxes from "../../assets/png/boxes.png";
+import plant from "../../assets/png/plant.png";
+import {
+	data,
+	todayExpenses,
+	previousExpenses,
+	spendCategories,
+} from "../../dummyData";
 
 export default function Expenses() {
 	const [activeIndex, setActiveIndex] = useState(0);
@@ -21,6 +27,8 @@ export default function Expenses() {
 		<>
 			<main className={styles.expenses}>
 				<div className={styles.expensesCard}>
+					{/* Expense Overview Section */}
+
 					<section className={styles.expensesOverview}>
 						<div className={styles.expensesHeader}>
 							<p className={styles.expensesTitle}>Expenses</p>
@@ -87,7 +95,7 @@ export default function Expenses() {
 											style={{ background: expense.iconBackgroundColor }}
 											className={styles.expenseItemDiv}
 										>
-											<img src={cartIcon} alt={expense.expense} />
+											<img src={expense.icon} alt={expense.expense} />
 										</div>
 										<div className={styles.expenseItemDetails}>
 											<p className={styles.expenseItemTitle}>
@@ -125,7 +133,7 @@ export default function Expenses() {
 											style={{ background: expense.iconBackgroundColor }}
 											className={styles.expenseItemDiv}
 										>
-											<img src={cartIcon} alt={expense.expense} />
+											<img src={expense.icon} alt={expense.expense} />
 										</div>
 										<div className={styles.expenseItemDetails}>
 											<p className={styles.expenseItemTitle}>
@@ -143,6 +151,57 @@ export default function Expenses() {
 								</li>
 							))}
 						</ul>
+					</section>
+
+					{/* Money Spent Analysis Section */}
+
+					<section className={styles.moneyOverview}>
+						<p className={styles.moneyOverviewTitle}>
+							Where did your money go?
+						</p>
+						<ul>
+							{spendCategories.map((category) => (
+								<li key={category.id}>
+									<div className={styles.spendCategory}>
+										<p className={styles.spendCategoryName}>
+											{" "}
+											{category.category}
+										</p>
+										<p className={styles.spendCategoryPrice}>
+											{category.price.toFixed(2)}
+										</p>
+									</div>
+									<div className={styles.spendCategoryBar}>
+										<div
+											style={{
+												width: `${
+													(category.price /
+														spendCategories.reduce(
+															(acc, category) => acc + category.price,
+															0
+														)) *
+													100
+												}%`,
+											}}
+											className={styles.spendCategoryColoredBar}
+										></div>
+									</div>
+								</li>
+							))}
+						</ul>
+
+						<div className={styles.saveMoneyDiv}>
+							<img src={boxes} alt="boxes" className={styles.boxes} />
+							<img src={plant} alt="plant" className={styles.plant} />
+							<p className={styles.saveMoneyTitle}>Save more money?</p>
+							<p className={styles.saveMoneyInfo}>
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+								enim ad minim.
+							</p>
+							<button className={styles.button} type="button">
+								VIEW TIPS
+							</button>
+						</div>
 					</section>
 				</div>
 			</main>
