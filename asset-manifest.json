@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/demo-react-dashboard/static/css/main.8c61ffc0.css",
+    "main.js": "/demo-react-dashboard/static/js/main.75fa9a7b.js",
+    "static/media/transportIcon.svg": "/demo-react-dashboard/static/media/transportIcon.654be71e906e9d7918a65f62380e2676.svg",
+    "index.html": "/demo-react-dashboard/index.html",
+    "static/media/cartIcon.svg": "/demo-react-dashboard/static/media/cartIcon.ad31a888590857c57aab3f8d2021e435.svg",
+    "static/media/houseIcon.svg": "/demo-react-dashboard/static/media/houseIcon.a0914e6ac4cf70465484ac3d1e6aea6a.svg",
+    "main.8c61ffc0.css.map": "/demo-react-dashboard/static/css/main.8c61ffc0.css.map",
+    "main.75fa9a7b.js.map": "/demo-react-dashboard/static/js/main.75fa9a7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c61ffc0.css",
+    "static/js/main.75fa9a7b.js"
+  ]
+}
